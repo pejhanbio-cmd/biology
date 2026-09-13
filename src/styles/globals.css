@@ -1202,3 +1202,155 @@ img {
   transform: translateY(-2px);
   background: var(--color-primary-dark);
   }
+/* =========================
+   STATS
+========================= */
+
+.stats-section {
+  padding: 10px 0 95px;
+}
+
+.stats-box {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  align-items: center;
+  gap: 45px;
+
+  padding: 38px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(143, 191, 136, 0.14),
+      transparent 30%
+    ),
+    var(--color-surface);
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+}
+
+.stats-box::after {
+  content: "🍃";
+
+  position: absolute;
+
+  left: 25px;
+  bottom: 12px;
+
+  font-size: 30px;
+
+  opacity: 0.16;
+
+  transform: rotate(-20deg);
+}
+
+.stats-intro {
+  position: relative;
+  z-index: 1;
+}
+
+.stats-eyebrow {
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  direction: ltr;
+}
+
+.stats-intro h2 {
+  margin-top: 10px;
+
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+.stats-intro p {
+  margin-top: 9px;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+  line-height: 2;
+}
+
+.stats-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.stat-item {
+  min-height: 105px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 17px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+
+  background: var(--color-surface-soft);
+
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-primary-light);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  color: var(--color-primary);
+
+  background: var(--color-surface);
+}
+
+.stat-item strong {
+  display: block;
+
+  color: var(--color-primary);
+
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.stat-item span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--color-text-muted);
+
+  font-size: 10px;
+}
