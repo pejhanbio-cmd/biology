@@ -2,30 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-
-function Home() {
-  return (
-    <>
-      <Navbar />
-
-      <main className="container" style={{ minHeight: "70vh", paddingTop: "60px" }}>
-        <div className="slide-up">
-          <h1>BIOLOGY</h1>
-
-          <p style={{ marginTop: "12px", color: "var(--color-text-muted)" }}>
-            Learn • Practice • Master
-          </p>
-
-          <p style={{ marginTop: "20px", fontSize: "20px" }}>
-            آکادمی زیست‌شناسی
-          </p>
-        </div>
-      </main>
-
-      <Footer />
-    </>
-  );
-}
+import Home from "./pages/Home";
 
 function PlaceholderPage({ title }) {
   return (
@@ -59,39 +36,43 @@ function PlaceholderPage({ title }) {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Route
-        path="/courses"
-        element={<PlaceholderPage title="دوره‌های آموزشی" />}
-      />
+        <Route
+          path="/courses"
+          element={<PlaceholderPage title="دوره‌های آموزشی" />}
+        />
 
-      <Route
-        path="/resources"
-        element={<PlaceholderPage title="منابع آموزشی" />}
-      />
+        <Route
+          path="/resources"
+          element={<PlaceholderPage title="منابع آموزشی" />}
+        />
 
-      <Route
-        path="/tests"
-        element={<PlaceholderPage title="آزمون‌ها" />}
-      />
+        <Route
+          path="/tests"
+          element={<PlaceholderPage title="آزمون‌ها" />}
+        />
 
-      <Route
-        path="/about"
-        element={<PlaceholderPage title="درباره BIOLOGY" />}
-      />
+        <Route
+          path="/about"
+          element={<PlaceholderPage title="درباره BIOLOGY" />}
+        />
 
-      <Route
-        path="/contact"
-        element={<PlaceholderPage title="تماس با ما" />}
-      />
+        <Route
+          path="/contact"
+          element={<PlaceholderPage title="تماس با ما" />}
+        />
 
-      <Route
-        path="/privacy"
-        element={<PlaceholderPage title="حریم خصوصی" />}
-      />
-    </Routes>
+        <Route
+          path="/privacy"
+          element={<PlaceholderPage title="حریم خصوصی" />}
+        />
+      </Routes>
+
+      <Footer />
+    </>
   );
 }
 
