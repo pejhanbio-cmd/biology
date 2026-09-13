@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
-
+import Biology10 from "./pages/Biology10";
 function PlaceholderPage({ title }) {
   return (
     <>
@@ -39,7 +39,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-
+<Route
+  path="/courses/biology-10"
+  element={<Biology10 />}
+/>
         <Route
           path="/courses"
           element={<PlaceholderPage title="دوره‌های آموزشی" />}
