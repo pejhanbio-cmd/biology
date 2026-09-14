@@ -13,13 +13,20 @@ function Biology10Chapter1Lesson1() {
 const [isBookmarked, setIsBookmarked] = useState(false);
 const [isCompleted, setIsCompleted] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem(
-      "biology-bookmark-biology10-chapter1-lesson1"
-    );
 
-    setIsBookmarked(saved === "true");
-  }, []);
+  useEffect(() => {
+  const saved = localStorage.getItem(
+    "biology-bookmark-biology10-chapter1-lesson1"
+  );
+
+  setIsBookmarked(saved === "true");
+
+  const completed = localStorage.getItem(
+    "biology-progress-biology10-chapter1-lesson1"
+  );
+
+  setIsCompleted(completed === "true");
+}, []);
 
   const handleBookmark = () => {
     const newState = !isBookmarked;
@@ -31,7 +38,16 @@ const [isCompleted, setIsCompleted] = useState(false);
       String(newState)
     );
   };
+const handleComplete = () => {
+  const newState = !isCompleted;
 
+  setIsCompleted(newState);
+
+  localStorage.setItem(
+    "biology-progress-biology10-chapter1-lesson1",
+    String(newState)
+  );
+};
   return (
     <main className="lesson-page">
       <section className="lesson-page-hero">
@@ -159,6 +175,32 @@ const [isCompleted, setIsCompleted] = useState(false);
                 </p>
               </div>
             </div>
+            <div className="lesson-complete-box">
+  <div>
+    <strong>
+      {isCompleted
+        ? "این گفتار را کامل کردی 🎉"
+        : "گفتار را مطالعه کردی؟"}
+    </strong>
+
+    <p>
+      {isCompleted
+        ? "می‌توانی هر زمان دوباره به این گفتار برگردی."
+        : "پس از مطالعه، آن را به عنوان تکمیل‌شده علامت بزن."}
+    </p>
+  </div>
+
+  <button
+    type="button"
+    className={`lesson-complete-button ${
+      isCompleted ? "completed" : ""
+    }`}
+    onClick={handleComplete}
+  >
+    <CheckCircle2 size={19} />
+    {isCompleted ? "تکمیل شد" : "علامت‌گذاری به عنوان تکمیل‌شده"}
+  </button>
+</div>
           </article>
 
           <aside className="lesson-sidebar">
