@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Resources from "./pages/Resources";
 import Tests from "./pages/Tests";
+import About from "./pages/About";
 
 import Biology10 from "./pages/Biology10";
 import Biology11 from "./pages/Biology11";
@@ -29,6 +30,8 @@ export default function App() {
         <Route path="/resources" element={<Resources />} />
 
         <Route path="/tests" element={<Tests />} />
+
+        <Route path="/about" element={<About />} />
 
         <Route
           path="/courses/biology-10"
