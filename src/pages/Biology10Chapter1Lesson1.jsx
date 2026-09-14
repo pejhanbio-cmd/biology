@@ -1,4 +1,3 @@
-```jsx
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
@@ -9,7 +8,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function Biology10Chapter1Lesson1() {
+function Biology10Chapter1Lesson1() {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -57,9 +56,7 @@ export default function Biology10Chapter1Lesson1() {
             <span>/</span>
             <Link to="/courses/biology-10">زیست دهم</Link>
             <span>/</span>
-            <Link to="/courses/biology-10/chapter-1">
-              فصل اول
-            </Link>
+            <Link to="/courses/biology-10/chapter-1">فصل اول</Link>
             <span>/</span>
             <span>گفتار اول</span>
           </div>
@@ -245,4 +242,5 @@ export default function Biology10Chapter1Lesson1() {
     </main>
   );
 }
-```
+
+export default Biology10Chapter1Lesson1;
