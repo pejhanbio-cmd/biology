@@ -1,7 +1,15 @@
+```jsx
+import Navbar from "./components/layout/Navbar";
+
 export default function App() {
   return (
-    <div>
-      <h1>BIOLOGY</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <main className="container">
+        <h1>BIOLOGY</h1>
+      </main>
+    </>
   );
 }
+```
