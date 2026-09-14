@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Biology10 from "./pages/Biology10";
 import Biology10Chapter1 from "./pages/Biology10Chapter1";
+import Biology10Chapter1Lesson1 from "./pages/Biology10Chapter1Lesson1";
 function PlaceholderPage({ title }) {
   return (
     <>
@@ -40,6 +41,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+  path="/courses/biology-10/chapter-1/lesson-1"
+  element={<Biology10Chapter1Lesson1 />}
+/>
 <Route
   path="/courses/biology-10/chapter-1"
   element={<Biology10Chapter1 />}
