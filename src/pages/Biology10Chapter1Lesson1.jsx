@@ -1,3 +1,5 @@
+```jsx
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Bookmark,
@@ -8,10 +10,29 @@ import {
 import { Link } from "react-router-dom";
 
 function Biology10Chapter1Lesson1() {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(
+      "biology-bookmark-biology10-chapter1-lesson1"
+    );
+
+    setIsBookmarked(saved === "true");
+  }, []);
+
+  const handleBookmark = () => {
+    const newState = !isBookmarked;
+
+    setIsBookmarked(newState);
+
+    localStorage.setItem(
+      "biology-bookmark-biology10-chapter1-lesson1",
+      String(newState)
+    );
+  };
+
   return (
     <main className="lesson-page">
-      {/* Lesson Header */}
-
       <section className="lesson-page-hero">
         <div className="container">
           <div className="lesson-breadcrumb">
@@ -43,17 +64,24 @@ function Biology10Chapter1Lesson1() {
 
             <button
               type="button"
-              className="lesson-bookmark"
-              aria-label="ذخیره درس"
+              className={`lesson-bookmark ${
+                isBookmarked ? "is-bookmarked" : ""
+              }`}
+              onClick={handleBookmark}
+              aria-label={
+                isBookmarked ? "حذف از درس‌های ذخیره‌شده" : "ذخیره درس"
+              }
             >
-              <Bookmark size={20} />
-              ذخیره درس
+              <Bookmark
+                size={20}
+                fill={isBookmarked ? "currentColor" : "none"}
+              />
+
+              {isBookmarked ? "ذخیره شد" : "ذخیره درس"}
             </button>
           </div>
         </div>
       </section>
-
-      {/* Lesson Content */}
 
       <section className="lesson-content-section">
         <div className="container lesson-layout">
@@ -132,8 +160,6 @@ function Biology10Chapter1Lesson1() {
             </div>
           </article>
 
-          {/* Sidebar */}
-
           <aside className="lesson-sidebar">
             <div className="lesson-sidebar-card">
               <span className="lesson-sidebar-label">
@@ -169,3 +195,4 @@ function Biology10Chapter1Lesson1() {
 }
 
 export default Biology10Chapter1Lesson1;
+```
