@@ -1,15 +1,9 @@
 ```jsx
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
-import Home from "./pages/Home";
-
 function App() {
   return (
-    <>
-      <Navbar />
-      <Home />
-      <Footer />
-    </>
+    <div>
+      <h1>BIOLOGY</h1>
+    </div>
   );
 }
 
