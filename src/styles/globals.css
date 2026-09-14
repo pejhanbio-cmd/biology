@@ -2933,3 +2933,21 @@ img {
     margin-top: 20px;
   }
 }
+```css
+/* BOOKMARK ACTIVE STATE */
+
+.lesson-bookmark.is-bookmarked {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.lesson-bookmark.is-bookmarked:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .lesson-bookmark.is-bookmarked {
+  color: #102016;
+}
+```
