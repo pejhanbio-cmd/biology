@@ -15,6 +15,7 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("biology-theme");
@@ -44,6 +45,10 @@ function Navbar() {
 
   const closeMobileMenu = () => {
     setMobileMenu(false);
+  };
+
+  const toggleSearch = () => {
+    setSearchOpen((current) => !current);
   };
 
   const navItems = [
@@ -98,7 +103,11 @@ function Navbar() {
           </span>
         </Link>
 
-        <nav className={`desktop-nav ${mobileMenu ? "mobile-open" : ""}`}>
+        <nav
+          className={`desktop-nav ${
+            mobileMenu ? "mobile-open" : ""
+          }`}
+        >
           {navItems.map((item) => {
             const Icon = item.icon;
 
@@ -123,8 +132,20 @@ function Navbar() {
           <button
             type="button"
             className="icon-button"
+            onClick={toggleSearch}
+            aria-label="جست‌وجو"
+            title="جست‌وجو"
+          >
+            <Search size={20} strokeWidth={1.9} />
+          </button>
+
+          <button
+            type="button"
+            className="icon-button"
             onClick={toggleTheme}
-            aria-label={darkMode ? "حالت روشن" : "حالت تاریک"}
+            aria-label={
+              darkMode ? "حالت روشن" : "حالت تاریک"
+            }
             title={darkMode ? "حالت روشن" : "حالت تاریک"}
           >
             {darkMode ? (
@@ -137,8 +158,14 @@ function Navbar() {
           <button
             type="button"
             className="mobile-menu-button"
-            onClick={() => setMobileMenu((current) => !current)}
-            aria-label={mobileMenu ? "بستن منو" : "باز کردن منو"}
+            onClick={() =>
+              setMobileMenu((current) => !current)
+            }
+            aria-label={
+              mobileMenu
+                ? "بستن منو"
+                : "باز کردن منو"
+            }
           >
             {mobileMenu ? (
               <X size={23} strokeWidth={1.9} />
@@ -148,6 +175,31 @@ function Navbar() {
           </button>
         </div>
       </div>
+
+      {searchOpen && (
+        <div className="navbar-search">
+          <div className="container">
+            <div className="navbar-search-box">
+              <Search size={19} />
+
+              <input
+                type="search"
+                placeholder="جست‌وجو در مطالب BIOLOGY..."
+                autoFocus
+                aria-label="جست‌وجو در مطالب"
+              />
+
+              <button
+                type="button"
+                onClick={toggleSearch}
+                aria-label="بستن جست‌وجو"
+              >
+                <X size={19} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
