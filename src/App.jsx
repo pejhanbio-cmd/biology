@@ -4,10 +4,14 @@ import Navbar from "./components/layout/Navbar";
 
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
+
 import Biology10 from "./pages/Biology10";
 import Biology11 from "./pages/Biology11";
 import Biology12 from "./pages/Biology12";
 import Health12 from "./pages/Health12";
+
+import Biology10Chapter1 from "./pages/Biology10Chapter1";
+import Biology10Chapter1Lesson1 from "./pages/Biology10Chapter1Lesson1";
 
 export default function App() {
   return (
@@ -22,6 +26,16 @@ export default function App() {
         <Route
           path="/courses/biology-10"
           element={<Biology10 />}
+        />
+
+        <Route
+          path="/courses/biology-10/chapter-1"
+          element={<Biology10Chapter1 />}
+        />
+
+        <Route
+          path="/courses/biology-10/chapter-1/lesson-1"
+          element={<Biology10Chapter1Lesson1 />}
         />
 
         <Route
