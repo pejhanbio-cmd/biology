@@ -10,7 +10,8 @@ import {
 import { Link } from "react-router-dom";
 
 function Biology10Chapter1Lesson1() {
-  const [isBookmarked, setIsBookmarked] = useState(false);
+const [isBookmarked, setIsBookmarked] = useState(false);
+const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem(
