@@ -1,4 +1,3 @@
-```jsx
 import {
   ArrowLeft,
   BookOpen,
@@ -165,4 +164,3 @@ function Courses() {
 }
 
 export default Courses;
-```
