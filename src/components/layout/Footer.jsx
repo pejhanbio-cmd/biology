@@ -1,4 +1,3 @@
-```jsx
 import {
   BookOpen,
   Dna,
@@ -116,4 +115,3 @@ function Footer() {
 }
 
 export default Footer;
-```
