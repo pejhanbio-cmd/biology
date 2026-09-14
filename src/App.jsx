@@ -1,13 +1,20 @@
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
+
+import Home from "./pages/Home";
+import Courses from "./pages/Courses";
 
 export default function App() {
   return (
     <>
       <Navbar />
 
-      <main className="container">
-        <h1>BIOLOGY</h1>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/courses" element={<Courses />} />
+      </Routes>
     </>
   );
 }
