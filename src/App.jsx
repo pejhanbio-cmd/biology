@@ -9,6 +9,7 @@ import Resources from "./pages/Resources";
 import Tests from "./pages/Tests";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
 
 import Biology10 from "./pages/Biology10";
 import Biology11 from "./pages/Biology11";
@@ -35,6 +36,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/privacy" element={<Privacy />} />
 
         <Route
           path="/courses/biology-10"
