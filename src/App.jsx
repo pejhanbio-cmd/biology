@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Resources from "./pages/Resources";
+import Tests from "./pages/Tests";
 
 import Biology10 from "./pages/Biology10";
 import Biology11 from "./pages/Biology11";
@@ -26,6 +27,8 @@ export default function App() {
         <Route path="/courses" element={<Courses />} />
 
         <Route path="/resources" element={<Resources />} />
+
+        <Route path="/tests" element={<Tests />} />
 
         <Route
           path="/courses/biology-10"
