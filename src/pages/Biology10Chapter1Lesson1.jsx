@@ -14,38 +14,42 @@ function Biology10Chapter1Lesson1() {
   const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem(
+    const savedBookmark = localStorage.getItem(
       "biology-bookmark-biology10-chapter1-lesson1"
     );
 
-    setIsBookmarked(saved === "true");
-
-    const completed = localStorage.getItem(
+    const savedProgress = localStorage.getItem(
       "biology-progress-biology10-chapter1-lesson1"
     );
 
-    setIsCompleted(completed === "true");
+    if (savedBookmark === "true") {
+      setIsBookmarked(true);
+    }
+
+    if (savedProgress === "true") {
+      setIsCompleted(true);
+    }
   }, []);
 
   const handleBookmark = () => {
-    const newState = !isBookmarked;
+    const newValue = !isBookmarked;
 
-    setIsBookmarked(newState);
+    setIsBookmarked(newValue);
 
     localStorage.setItem(
       "biology-bookmark-biology10-chapter1-lesson1",
-      String(newState)
+      newValue ? "true" : "false"
     );
   };
 
   const handleComplete = () => {
-    const newState = !isCompleted;
+    const newValue = !isCompleted;
 
-    setIsCompleted(newState);
+    setIsCompleted(newValue);
 
     localStorage.setItem(
       "biology-progress-biology10-chapter1-lesson1",
-      String(newState)
+      newValue ? "true" : "false"
     );
   };
 
@@ -82,15 +86,12 @@ function Biology10Chapter1Lesson1() {
 
             <button
               type="button"
-              className={`lesson-bookmark ${
-                isBookmarked ? "is-bookmarked" : ""
-              }`}
-              onClick={handleBookmark}
-              aria-label={
+              className={
                 isBookmarked
-                  ? "حذف از درس‌های ذخیره‌شده"
-                  : "ذخیره درس"
+                  ? "lesson-bookmark is-bookmarked"
+                  : "lesson-bookmark"
               }
+              onClick={handleBookmark}
             >
               <Bookmark
                 size={20}
@@ -196,9 +197,11 @@ function Biology10Chapter1Lesson1() {
 
               <button
                 type="button"
-                className={`lesson-complete-button ${
-                  isCompleted ? "completed" : ""
-                }`}
+                className={
+                  isCompleted
+                    ? "lesson-complete-button completed"
+                    : "lesson-complete-button"
+                }
                 onClick={handleComplete}
               >
                 <CheckCircle2 size={19} />
@@ -221,11 +224,15 @@ function Biology10Chapter1Lesson1() {
               <div className="lesson-sidebar-progress">
                 <div>
                   <span>پیشرفت فصل</span>
-                  <strong>0%</strong>
+                  <strong>{isCompleted ? "33%" : "0%"}</strong>
                 </div>
 
                 <div className="lesson-progress-bar">
-                  <span></span>
+                  <span
+                    style={{
+                      width: isCompleted ? "33%" : "0%",
+                    }}
+                  ></span>
                 </div>
               </div>
 
