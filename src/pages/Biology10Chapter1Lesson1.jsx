@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-function Biology10Chapter1Lesson1() {
+export default function Biology10Chapter1Lesson1() {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -22,16 +22,11 @@ function Biology10Chapter1Lesson1() {
       "biology-progress-biology10-chapter1-lesson1"
     );
 
-    if (savedBookmark === "true") {
-      setIsBookmarked(true);
-    }
-
-    if (savedProgress === "true") {
-      setIsCompleted(true);
-    }
+    setIsBookmarked(savedBookmark === "true");
+    setIsCompleted(savedProgress === "true");
   }, []);
 
-  const handleBookmark = () => {
+  function handleBookmark() {
     const newValue = !isBookmarked;
 
     setIsBookmarked(newValue);
@@ -40,9 +35,9 @@ function Biology10Chapter1Lesson1() {
       "biology-bookmark-biology10-chapter1-lesson1",
       newValue ? "true" : "false"
     );
-  };
+  }
 
-  const handleComplete = () => {
+  function handleComplete() {
     const newValue = !isCompleted;
 
     setIsCompleted(newValue);
@@ -51,7 +46,7 @@ function Biology10Chapter1Lesson1() {
       "biology-progress-biology10-chapter1-lesson1",
       newValue ? "true" : "false"
     );
-  };
+  }
 
   return (
     <main className="lesson-page">
@@ -250,6 +245,4 @@ function Biology10Chapter1Lesson1() {
     </main>
   );
 }
-
-export default Biology10Chapter1Lesson1;
 ```
