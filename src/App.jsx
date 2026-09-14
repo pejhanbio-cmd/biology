@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Biology10 from "./pages/Biology10";
 import Biology11 from "./pages/Biology11";
 import Biology12 from "./pages/Biology12";
-
+import Health12 from "./pages/Health12";
 import Biology10Chapter1 from "./pages/Biology10Chapter1";
 import Biology10Chapter1Lesson1 from "./pages/Biology10Chapter1Lesson1";
 
@@ -57,7 +57,10 @@ function App() {
           path="/courses/biology-12"
           element={<Biology12 />}
         />
-
+<Route
+  path="/courses/health-12"
+  element={<Health12 />}
+/>
         <Route
           path="/courses/biology-10/chapter-1"
           element={<Biology10Chapter1 />}
