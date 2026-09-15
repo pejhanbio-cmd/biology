@@ -6,22 +6,33 @@ import {
   Microscope,
 } from "lucide-react";
 
+import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1";
+
 function Biology10Chapter1() {
   return (
     <main className="chapter-page">
+
+      {/* معرفی فصل */}
       <section className="chapter-hero">
         <div className="container">
+
           <div className="chapter-breadcrumb">
             <Link to="/">خانه</Link>
             <ChevronLeft size={15} />
+
             <Link to="/courses">دوره‌ها</Link>
             <ChevronLeft size={15} />
-            <Link to="/courses/biology-10">زیست دهم</Link>
+
+            <Link to="/courses/biology-10">
+              زیست دهم
+            </Link>
             <ChevronLeft size={15} />
+
             <span>فصل اول</span>
           </div>
 
           <div className="chapter-hero-content">
+
             <div className="chapter-icon">
               <Dna size={42} strokeWidth={1.6} />
             </div>
@@ -31,48 +42,66 @@ function Biology10Chapter1() {
                 زیست‌شناسی دهم
               </span>
 
-              <h1>فصل اول: دنیای زنده</h1>
+              <h1>
+                فصل اول: دنیای زنده
+              </h1>
 
               <p>
-                محتوای آموزشی کامل فصل اول زیست‌شناسی دهم،
-                شامل زیست‌شناسی، گسترهٔ حیات، یاخته و بافت در بدن انسان.
+                درسنامه، نکات مهم، نکات شکل‌ها و مطالب تکمیلی
+                فصل اول زیست‌شناسی دهم.
               </p>
             </div>
+
           </div>
         </div>
       </section>
 
+
+      {/* محتوای فصل */}
       <section className="chapter-content">
         <div className="container">
 
           <div className="chapter-intro">
+
             <div className="section-icon">
               <BookOpen size={22} />
             </div>
 
             <div>
-              <h2>درسنامه فصل اول</h2>
+              <h2>
+                درسنامهٔ فصل اول
+              </h2>
 
               <p>
-                مطالب فصل اول در یک صفحه و به ترتیب موضوعی ارائه شده‌اند.
+                تمام مطالب فصل اول در یک صفحه و به‌صورت
+                یکپارچه ارائه شده است.
               </p>
             </div>
+
           </div>
 
+
+          {/* بخش اول */}
           <section className="chapter-section">
+
             <div className="chapter-section-heading">
+
               <span>۱</span>
 
               <div>
-                <h2>زیست‌شناسی چیست؟</h2>
+                <h2>
+                  زیست‌شناسی چیست؟
+                </h2>
 
                 <p>
                   زیست‌شناسی نوین و زیست‌شناسی در خدمت انسان.
                 </p>
               </div>
+
             </div>
 
             <div className="chapter-topic-list">
+
               <div>زیست‌شناسی چیست؟</div>
               <div>زیست‌شناسی نوین</div>
               <div>زیست‌شناسی در خدمت انسان</div>
@@ -81,23 +110,34 @@ function Biology10Chapter1() {
               <div>تأمین انرژی‌های تجدیدپذیر</div>
               <div>سلامت و درمان بیماری‌ها</div>
               <div>فناوری‌های نوین و اخلاق زیستی</div>
+
             </div>
+
           </section>
 
+
+          {/* بخش دوم */}
           <section className="chapter-section">
+
             <div className="chapter-section-heading">
+
               <span>۲</span>
 
               <div>
-                <h2>گسترهٔ حیات</h2>
+                <h2>
+                  گسترهٔ حیات
+                </h2>
 
                 <p>
-                  ویژگی‌های حیات، سازمان‌یابی جانداران و مولکول‌های زیستی.
+                  ویژگی‌های حیات، سازمان‌یابی جانداران
+                  و مولکول‌های زیستی.
                 </p>
               </div>
+
             </div>
 
             <div className="chapter-topic-list">
+
               <div>ویژگی‌های حیات</div>
               <div>سازمان‌یابی جانداران</div>
               <div>همایستایی</div>
@@ -105,31 +145,44 @@ function Biology10Chapter1() {
               <div>کسب و مصرف انرژی</div>
               <div>پاسخ به محرک‌ها</div>
               <div>تولیدمثل</div>
-              <div>یاخته به‌عنوان پایین‌ترین سطح سازمان‌یابی حیات</div>
+              <div>
+                یاخته به‌عنوان پایین‌ترین سطح سازمان‌یابی حیات
+              </div>
               <div>مولکول‌های زیستی</div>
               <div>سطوح سازمان‌یابی حیات</div>
+
             </div>
+
           </section>
 
+
+          {/* بخش سوم */}
           <section className="chapter-section">
+
             <div className="chapter-section-heading">
+
               <span>۳</span>
 
               <div>
-                <h2>یاخته و بافت در بدن انسان</h2>
+                <h2>
+                  یاخته و بافت در بدن انسان
+                </h2>
 
                 <p>
-                  ساختار یاختهٔ جانوری، اندامک‌ها، غشای یاخته،
+                  یاختهٔ جانوری، اندامک‌ها، غشای یاخته،
                   انتقال مواد و بافت‌های بدن.
                 </p>
               </div>
+
             </div>
 
             <div className="chapter-topic-list">
+
               <div>یاختهٔ جانوری</div>
               <div>هسته</div>
               <div>سیتوپلاسم</div>
-              <div>شبکهٔ آندوپلاسمی زبر و صاف</div>
+              <div>شبکهٔ آندوپلاسمی زبر</div>
+              <div>شبکهٔ آندوپلاسمی صاف</div>
               <div>رناتن</div>
               <div>دستگاه گلژی</div>
               <div>راکیزه</div>
@@ -141,7 +194,7 @@ function Biology10Chapter1() {
               <div>پروتئین‌های غشا</div>
               <div>انتشار ساده</div>
               <div>انتشار تسهیل‌شده</div>
-              <div>گذرندگی</div>
+              <div>گذرندگی (اسمز)</div>
               <div>انتقال فعال</div>
               <div>درون‌بری</div>
               <div>برون‌رانی</div>
@@ -149,24 +202,59 @@ function Biology10Chapter1() {
               <div>بافت پیوندی</div>
               <div>بافت ماهیچه‌ای</div>
               <div>بافت عصبی</div>
+
             </div>
+
           </section>
 
+
+          {/* نکات شکل‌ها */}
+          <section className="chapter-section">
+
+            <div className="chapter-section-heading">
+
+              <span>۴</span>
+
+              <div>
+                <h2>
+                  نکات شکل‌ها و نکات مهم
+                </h2>
+
+                <p>
+                  نکات شکل‌های فصل و نکات تکمیلی مربوط به
+                  یاخته، غشا، انتقال مواد و بافت‌ها.
+                </p>
+              </div>
+
+            </div>
+
+            <FigureNotesChapter1 />
+
+          </section>
+
+
+          {/* یادداشت پایانی */}
           <section className="chapter-note">
+
             <Microscope size={22} />
 
             <div>
-              <h3>نکات شکل‌ها</h3>
+              <h3>
+                نکته
+              </h3>
 
               <p>
-                نکات و مطالب مربوط به شکل‌های فصل نیز در ادامهٔ همین
-                صفحه قرار می‌گیرند.
+                مطالب این صفحه به‌صورت یکپارچه برای مطالعهٔ
+                فصل اول تنظیم شده‌اند و دیگر نیازی به ورود
+                جداگانه به گفتارها وجود ندارد.
               </p>
             </div>
+
           </section>
 
         </div>
       </section>
+
     </main>
   );
 }
