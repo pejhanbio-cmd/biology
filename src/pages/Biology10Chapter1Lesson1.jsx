@@ -8,6 +8,7 @@ import {
   Microscope,
   Sprout,
 } from "lucide-react";
+import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1";
 
 const sections = [
   {
@@ -276,6 +277,7 @@ function Biology10Chapter1Lesson1() {
             </div>
           </aside>
         </div>
+        <FigureNotesChapter1 />
       </section>
     </main>
   );
