@@ -1,240 +1,278 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Bookmark,
+  BookOpen,
   CheckCircle2,
-  Dna,
+  ChevronLeft,
   Lightbulb,
+  Microscope,
+  Sprout,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
+const sections = [
+  {
+    title: "زیست‌شناسی چیست؟",
+    icon: Microscope,
+    content: [
+      "زیست‌شناسی، علم مطالعهٔ جانداران است.",
+      "زیست‌شناسی از علوم تجربی است و شناخت جانداران و فرایندهای زیستی، زمینهٔ بسیاری از کاربردهای علمی و زندگی انسان را فراهم می‌کند.",
+    ],
+  },
+  {
+    title: "زیست‌شناسی نوین",
+    icon: BookOpen,
+    content: [
+      "زیست‌شناسی نوین با پیشرفت فناوری و روش‌های علمی، امکان مطالعهٔ دقیق‌تر جانداران و فرایندهای زیستی را فراهم کرده است.",
+      "در زیست‌شناسی نوین، شناخت ساختار و عملکرد جانداران و ارتباط آنها با محیط، اهمیت زیادی دارد.",
+    ],
+  },
+  {
+    title: "زیست‌شناسی در خدمت انسان",
+    icon: Sprout,
+    content: [
+      "زیست‌شناسی در بخش‌های مختلف زندگی انسان کاربرد دارد.",
+      "تأمین غذای سالم و کافی، حفاظت از بوم‌سازگان، تأمین انرژی، سلامت و درمان بیماری‌ها و فناوری‌های نوین زیستی از زمینه‌های مهم کاربرد زیست‌شناسی هستند.",
+    ],
+  },
+];
+
+const applications = [
+  {
+    title: "تأمین غذای سالم و کافی",
+    text:
+      "انسان برای تأمین غذا به‌طور مستقیم یا غیرمستقیم به گیاهان وابسته است. شناخت جانداران و فرایندهای زیستی در تأمین غذای سالم و کافی اهمیت دارد.",
+  },
+  {
+    title: "حفاظت از بوم‌سازگان",
+    text:
+      "گیاهان و سایر جانداران در میان عوامل زنده و غیرزندهٔ محیط زندگی می‌کنند. حفظ پایداری بوم‌سازگان‌ها به حفظ کیفیت زندگی انسان کمک می‌کند.",
+  },
+  {
+    title: "تأمین انرژی",
+    text:
+      "بخش زیادی از انرژی مورد استفادهٔ انسان از سوخت‌های فسیلی تأمین می‌شود. زیست‌شناسی در شناخت و توسعهٔ سوخت‌های زیستی نیز کاربرد دارد.",
+  },
+  {
+    title: "سلامت و درمان بیماری‌ها",
+    text:
+      "شناخت جانداران و فرایندهای زیستی در زمینهٔ سلامت و درمان بیماری‌ها اهمیت دارد.",
+  },
+  {
+    title: "فناوری‌های نوین زیستی",
+    text:
+      "پیشرفت دانش زیست‌شناسی و فناوری، زمینهٔ استفاده از روش‌های نوین زیستی را فراهم کرده است.",
+  },
+  {
+    title: "اخلاق زیستی",
+    text:
+      "همراه با پیشرفت فناوری‌های زیستی، توجه به پیامدها و مسائل اخلاقی استفاده از این فناوری‌ها اهمیت دارد.",
+  },
+];
+
+const keyPoints = [
+  "زیست‌شناسی علم مطالعهٔ جانداران است.",
+  "زیست‌شناسی از علوم تجربی است.",
+  "گیاهان در تأمین غذای انسان نقش مهمی دارند.",
+  "جانداران با عوامل زنده و غیرزندهٔ محیط خود در ارتباط‌اند.",
+  "حفاظت از بوم‌سازگان‌ها به حفظ کیفیت زندگی کمک می‌کند.",
+  "بخش زیادی از انرژی مورد استفادهٔ انسان از سوخت‌های فسیلی تأمین می‌شود.",
+  "سوخت‌های زیستی می‌توانند در تأمین انرژی مورد توجه قرار گیرند.",
+  "زیست‌شناسی در سلامت، درمان بیماری‌ها و فناوری‌های نوین زیستی کاربرد دارد.",
+];
 
 function Biology10Chapter1Lesson1() {
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
-
-  useEffect(() => {
-    const savedBookmark = localStorage.getItem(
-      "biology-bookmark-biology10-chapter1-lesson1"
-    );
-
-    const savedProgress = localStorage.getItem(
-      "biology-progress-biology10-chapter1-lesson1"
-    );
-
-    setIsBookmarked(savedBookmark === "true");
-    setIsCompleted(savedProgress === "true");
-  }, []);
-
-  function handleBookmark() {
-    const newValue = !isBookmarked;
-
-    setIsBookmarked(newValue);
-
-    localStorage.setItem(
-      "biology-bookmark-biology10-chapter1-lesson1",
-      newValue ? "true" : "false"
-    );
-  }
-
-  function handleComplete() {
-    const newValue = !isCompleted;
-
-    setIsCompleted(newValue);
-
-    localStorage.setItem(
-      "biology-progress-biology10-chapter1-lesson1",
-      newValue ? "true" : "false"
-    );
-  }
-
   return (
     <main className="lesson-page">
-      <section className="lesson-page-hero">
+      <section className="lesson-hero">
         <div className="container">
           <div className="lesson-breadcrumb">
             <Link to="/">خانه</Link>
-            <span>/</span>
+            <ChevronLeft size={15} />
+
+            <Link to="/courses">دوره‌ها</Link>
+            <ChevronLeft size={15} />
+
             <Link to="/courses/biology-10">زیست دهم</Link>
-            <span>/</span>
-            <Link to="/courses/biology-10/chapter-1">فصل اول</Link>
-            <span>/</span>
+            <ChevronLeft size={15} />
+
+            <Link to="/courses/biology-10/chapter-1">
+              فصل اول
+            </Link>
+            <ChevronLeft size={15} />
+
             <span>گفتار اول</span>
           </div>
 
-          <div className="lesson-header-content">
-            <div>
-              <div className="lesson-badge">
-                <Dna size={17} />
-                فصل اول · گفتار اول
-              </div>
-
-              <h1>زیست‌شناسی چیست؟</h1>
-
-              <p>
-                آشنایی با زیست‌شناسی، ویژگی‌های جانداران و سطوح
-                سازمان‌یافتگی حیات.
-              </p>
+          <div className="lesson-hero-content">
+            <div className="lesson-hero-icon">
+              <Microscope size={42} strokeWidth={1.6} />
             </div>
 
-            <button
-              type="button"
-              className={
-                isBookmarked
-                  ? "lesson-bookmark is-bookmarked"
-                  : "lesson-bookmark"
-              }
-              onClick={handleBookmark}
-            >
-              <Bookmark
-                size={20}
-                fill={isBookmarked ? "currentColor" : "none"}
-              />
+            <div>
+              <span className="lesson-eyebrow">
+                زیست‌شناسی دهم • فصل اول
+              </span>
 
-              {isBookmarked ? "ذخیره شد" : "ذخیره درس"}
-            </button>
+              <h1>گفتار اول: زیست‌شناسی چیست؟</h1>
+
+              <p>
+                زیست‌شناسی، زیست‌شناسی نوین و کاربردهای زیست‌شناسی
+                در خدمت انسان.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="lesson-content-section">
+      <section className="lesson-content">
         <div className="container lesson-layout">
-          <article className="lesson-article">
-            <div className="lesson-introduction">
-              <span>شروع یادگیری</span>
-
-              <h2>زیست‌شناسی؛ علم مطالعهٔ حیات</h2>
-
-              <p>
-                زیست‌شناسی شاخه‌ای از علوم تجربی است که به مطالعهٔ
-                جانداران، ساختار، عملکرد، رشد، تولیدمثل، رفتار و
-                ارتباط آن‌ها با محیط می‌پردازد.
-              </p>
-            </div>
-
-            <div className="lesson-block">
-              <h2>ویژگی‌های جانداران</h2>
-
-              <p>
-                جانداران مجموعه‌ای از ویژگی‌های مشترک دارند که آن‌ها
-                را از مواد غیرزنده متمایز می‌کند. سازمان‌یافتگی،
-                رشد و نمو، تولیدمثل، پاسخ به محرک‌ها و انجام فرایندهای
-                زیستی از جمله این ویژگی‌ها هستند.
-              </p>
-            </div>
-
-            <div className="lesson-highlight">
-              <Lightbulb size={22} />
+          <article className="lesson-main">
+            <div className="lesson-intro-card">
+              <div className="lesson-intro-icon">
+                <BookOpen size={24} />
+              </div>
 
               <div>
-                <strong>نکته مهم</strong>
+                <span>درسنامه</span>
+
+                <h2>زیست‌شناسی چیست؟</h2>
 
                 <p>
-                  برای شناخت یک جاندار، باید ویژگی‌های مختلف آن را
-                  در کنار یکدیگر بررسی کنیم؛ یک ویژگی به‌تنهایی
-                  همیشه برای تعریف حیات کافی نیست.
+                  در این گفتار با زیست‌شناسی، زیست‌شناسی نوین و
+                  مهم‌ترین زمینه‌های کاربرد زیست‌شناسی در زندگی
+                  انسان آشنا می‌شویم.
                 </p>
               </div>
             </div>
 
-            <div className="lesson-block">
-              <h2>سطوح سازمان‌یافتگی حیات</h2>
+            {sections.map((section) => {
+              const Icon = section.icon;
 
-              <p>
-                در زیست‌شناسی، جانداران و اجزای آن‌ها در سطوح مختلفی
-                از سازمان‌یافتگی بررسی می‌شوند. این سطوح از اجزای
-                کوچک‌تر مانند مولکول‌ها و یاخته‌ها شروع شده و تا
-                بافت، اندام، دستگاه و جاندار ادامه پیدا می‌کنند.
-              </p>
+              return (
+                <section
+                  className="lesson-section"
+                  key={section.title}
+                >
+                  <div className="lesson-section-heading">
+                    <div className="lesson-section-icon">
+                      <Icon size={22} />
+                    </div>
 
-              <div className="lesson-levels">
-                <div>مولکول</div>
-                <div>یاخته</div>
-                <div>بافت</div>
-                <div>اندام</div>
-                <div>دستگاه</div>
-                <div>جاندار</div>
+                    <h2>{section.title}</h2>
+                  </div>
+
+                  <div className="lesson-section-body">
+                    {section.content.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+
+            <section className="lesson-section">
+              <div className="lesson-section-heading">
+                <div className="lesson-section-icon">
+                  <Sprout size={22} />
+                </div>
+
+                <h2>زمینه‌های کاربرد زیست‌شناسی</h2>
               </div>
-            </div>
 
-            <div className="lesson-summary">
-              <div className="lesson-summary-icon">
-                <CheckCircle2 size={21} />
+              <div className="application-grid">
+                {applications.map((item) => (
+                  <article
+                    className="application-card"
+                    key={item.title}
+                  >
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="lesson-highlight">
+              <div className="lesson-highlight-icon">
+                <Lightbulb size={23} />
               </div>
 
               <div>
-                <strong>جمع‌بندی گفتار</strong>
+                <h2>نکتهٔ مهم</h2>
 
                 <p>
-                  زیست‌شناسی علم مطالعهٔ حیات است و برای شناخت
-                  جانداران باید ساختار، عملکرد و ارتباط آن‌ها با
-                  محیط را در سطوح مختلف سازمان‌یافتگی بررسی کرد.
+                  زیست‌شناسی فقط مطالعهٔ ساختار جانداران نیست؛
+                  شناخت جانداران و فرایندهای زیستی، در زمینه‌هایی
+                  مانند غذا، محیط زیست، انرژی، سلامت و فناوری نیز
+                  کاربرد دارد.
                 </p>
               </div>
-            </div>
+            </section>
 
-            <div className="lesson-complete-box">
-              <div>
-                <strong>
-                  {isCompleted
-                    ? "این گفتار را کامل کردی 🎉"
-                    : "گفتار را مطالعه کردی؟"}
-                </strong>
-
-                <p>
-                  {isCompleted
-                    ? "می‌توانی هر زمان دوباره به این گفتار برگردی."
-                    : "پس از مطالعه، آن را به عنوان تکمیل‌شده علامت بزن."}
-                </p>
+            <section className="lesson-summary">
+              <div className="lesson-summary-heading">
+                <CheckCircle2 size={23} />
+                <h2>جمع‌بندی گفتار</h2>
               </div>
 
-              <button
-                type="button"
-                className={
-                  isCompleted
-                    ? "lesson-complete-button completed"
-                    : "lesson-complete-button"
-                }
-                onClick={handleComplete}
+              <div className="summary-list">
+                {keyPoints.map((point) => (
+                  <div className="summary-item" key={point}>
+                    <CheckCircle2 size={17} />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <div className="lesson-navigation">
+              <Link
+                to="/courses/biology-10/chapter-1"
+                className="lesson-nav-button"
               >
-                <CheckCircle2 size={19} />
-
-                {isCompleted
-                  ? "تکمیل شد"
-                  : "علامت‌گذاری به عنوان تکمیل‌شده"}
-              </button>
+                <ArrowRight size={18} />
+                بازگشت به فصل
+              </Link>
             </div>
           </article>
 
           <aside className="lesson-sidebar">
             <div className="lesson-sidebar-card">
-              <span className="lesson-sidebar-label">
-                مسیر این فصل
+              <span className="sidebar-label">
+                فصل اول
               </span>
 
               <h3>دنیای زنده</h3>
 
-              <div className="lesson-sidebar-progress">
-                <div>
-                  <span>پیشرفت فصل</span>
-                  <strong>{isCompleted ? "33%" : "0%"}</strong>
-                </div>
+              <div className="sidebar-divider" />
 
-                <div className="lesson-progress-bar">
-                  <span
-                    style={{
-                      width: isCompleted ? "33%" : "0%",
-                    }}
-                  ></span>
-                </div>
+              <div className="sidebar-item active">
+                <span>۱</span>
+                <strong>زیست‌شناسی چیست؟</strong>
               </div>
 
-              <Link
-                to="/courses/biology-10/chapter-1"
-                className="lesson-back-button"
-              >
-                <ArrowRight size={17} />
-                بازگشت به فصل
-              </Link>
+              <div className="sidebar-item">
+                <span>۲</span>
+                <strong>گسترهٔ حیات</strong>
+              </div>
+
+              <div className="sidebar-item">
+                <span>۳</span>
+                <strong>یاخته و بافت در بدن انسان</strong>
+              </div>
+            </div>
+
+            <div className="lesson-sidebar-tip">
+              <Lightbulb size={20} />
+
+              <div>
+                <strong>روش مطالعه</strong>
+
+                <p>
+                  ابتدا متن درسنامه را مطالعه کنید و سپس نکات
+                  جمع‌بندی را مرور کنید.
+                </p>
+              </div>
             </div>
           </aside>
         </div>
