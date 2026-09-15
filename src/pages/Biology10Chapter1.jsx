@@ -1,81 +1,10 @@
 import { Link } from "react-router-dom";
 import {
-  ArrowLeft,
   BookOpen,
-  CheckCircle2,
   ChevronLeft,
   Dna,
-  Layers3,
   Microscope,
 } from "lucide-react";
-
-const lessons = [
-  {
-    number: "۱",
-    title: "زیست‌شناسی چیست؟",
-    description:
-      "زیست‌شناسی نوین، زیست‌شناسی در خدمت انسان و کاربردهای زیست‌شناسی در زندگی انسان.",
-    topics: [
-      "زیست‌شناسی چیست؟",
-      "زیست‌شناسی نوین",
-      "زیست‌شناسی در خدمت انسان",
-      "تأمین غذای سالم و کافی",
-      "حفاظت از بوم‌سازگان",
-      "تأمین انرژی",
-      "فناوری‌های نوین و اخلاق زیستی",
-    ],
-  },
-  {
-    number: "۲",
-    title: "گسترهٔ حیات",
-    description:
-      "ویژگی‌های حیات، سطوح سازمان‌یابی و مولکول‌های زیستی.",
-    topics: [
-      "ویژگی‌های حیات",
-      "سازمان‌یابی و نظم",
-      "همایستایی",
-      "رشد و نمو",
-      "کسب و مصرف انرژی",
-      "پاسخ به محرک‌ها",
-      "تولیدمثل",
-      "یاخته به‌عنوان پایین‌ترین سطح سازمان‌یابی حیات",
-      "مولکول‌های زیستی",
-      "سطوح سازمان‌یابی حیات",
-    ],
-  },
-  {
-    number: "۳",
-    title: "یاخته و بافت در بدن انسان",
-    description:
-      "ساختار یاختهٔ جانوری، اندامک‌ها، غشای یاخته، انتقال مواد و بافت‌های بدن.",
-    topics: [
-      "یاختهٔ جانوری",
-      "هسته",
-      "سیتوپلاسم",
-      "رناتن",
-      "شبکهٔ آندوپلاسمی زبر",
-      "شبکهٔ آندوپلاسمی صاف",
-      "دستگاه گلژی",
-      "راکیزه",
-      "ریزکیسه",
-      "کافنده‌تن",
-      "واکوئول",
-      "میانک",
-      "غشای یاخته‌ای",
-      "پروتئین‌های غشا",
-      "انتشار ساده",
-      "انتشار تسهیل‌شده",
-      "گذرندگی",
-      "انتقال فعال",
-      "درون‌بری",
-      "برون‌رانی",
-      "بافت پوششی",
-      "بافت پیوندی",
-      "بافت ماهیچه‌ای",
-      "بافت عصبی",
-    ],
-  },
-];
 
 function Biology10Chapter1() {
   return (
@@ -105,8 +34,8 @@ function Biology10Chapter1() {
               <h1>فصل اول: دنیای زنده</h1>
 
               <p>
-                درسنامه و محتوای آموزشی فصل اول زیست‌شناسی دهم،
-                در سه گفتار و با ساختار مناسب مطالعه.
+                محتوای آموزشی کامل فصل اول زیست‌شناسی دهم،
+                شامل زیست‌شناسی، گسترهٔ حیات، یاخته و بافت در بدن انسان.
               </p>
             </div>
           </div>
@@ -115,101 +44,111 @@ function Biology10Chapter1() {
 
       <section className="chapter-content">
         <div className="container">
+
           <div className="chapter-intro">
             <div className="section-icon">
               <BookOpen size={22} />
             </div>
 
             <div>
-              <h2>ساختار فصل</h2>
+              <h2>درسنامه فصل اول</h2>
+
               <p>
-                فصل «دنیای زنده» در سه گفتار ارائه می‌شود.
-                برای ورود به محتوای هر گفتار، آن را انتخاب کنید.
+                مطالب فصل اول در یک صفحه و به ترتیب موضوعی ارائه شده‌اند.
               </p>
             </div>
           </div>
 
-          <div className="lesson-grid">
-            {lessons.map((lesson) => (
-              <article
-                className="lesson-card"
-                key={lesson.number}
-              >
-                <div className="lesson-number">
-                  {lesson.number}
-                </div>
+          <section className="chapter-section">
+            <div className="chapter-section-heading">
+              <span>۱</span>
 
-                <div className="lesson-card-body">
-                  <span className="lesson-label">
-                    گفتار {lesson.number}
-                  </span>
+              <div>
+                <h2>زیست‌شناسی چیست؟</h2>
 
-                  <h2>{lesson.title}</h2>
-
-                  <p>{lesson.description}</p>
-
-                  <div className="lesson-topics">
-                    {lesson.topics.map((topic) => (
-                      <div
-                        className="lesson-topic"
-                        key={topic}
-                      >
-                        <CheckCircle2 size={16} />
-                        <span>{topic}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {lesson.number === "۱" ? (
-                    <Link
-                      to="/courses/biology-10/chapter-1/lesson-1"
-                      className="lesson-button"
-                    >
-                      مطالعهٔ گفتار
-                      <ArrowLeft size={17} />
-                    </Link>
-                  ) : (
-                    <button
-                      className="lesson-button disabled"
-                      type="button"
-                      disabled
-                    >
-                      به‌زودی
-                    </button>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <section className="chapter-summary">
-            <div className="summary-icon">
-              <Layers3 size={26} />
+                <p>
+                  زیست‌شناسی نوین و زیست‌شناسی در خدمت انسان.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h2>مسیر یادگیری فصل</h2>
+            <div className="chapter-topic-list">
+              <div>زیست‌شناسی چیست؟</div>
+              <div>زیست‌شناسی نوین</div>
+              <div>زیست‌شناسی در خدمت انسان</div>
+              <div>تأمین غذای سالم و کافی</div>
+              <div>حفاظت از بوم‌سازگان</div>
+              <div>تأمین انرژی‌های تجدیدپذیر</div>
+              <div>سلامت و درمان بیماری‌ها</div>
+              <div>فناوری‌های نوین و اخلاق زیستی</div>
+            </div>
+          </section>
 
-              <div className="learning-path">
-                <div>
-                  <span>۱</span>
-                  <strong>زیست‌شناسی</strong>
-                </div>
+          <section className="chapter-section">
+            <div className="chapter-section-heading">
+              <span>۲</span>
 
-                <ChevronLeft size={18} />
+              <div>
+                <h2>گسترهٔ حیات</h2>
 
-                <div>
-                  <span>۲</span>
-                  <strong>گسترهٔ حیات</strong>
-                </div>
-
-                <ChevronLeft size={18} />
-
-                <div>
-                  <span>۳</span>
-                  <strong>یاخته و بافت</strong>
-                </div>
+                <p>
+                  ویژگی‌های حیات، سازمان‌یابی جانداران و مولکول‌های زیستی.
+                </p>
               </div>
+            </div>
+
+            <div className="chapter-topic-list">
+              <div>ویژگی‌های حیات</div>
+              <div>سازمان‌یابی جانداران</div>
+              <div>همایستایی</div>
+              <div>رشد و نمو</div>
+              <div>کسب و مصرف انرژی</div>
+              <div>پاسخ به محرک‌ها</div>
+              <div>تولیدمثل</div>
+              <div>یاخته به‌عنوان پایین‌ترین سطح سازمان‌یابی حیات</div>
+              <div>مولکول‌های زیستی</div>
+              <div>سطوح سازمان‌یابی حیات</div>
+            </div>
+          </section>
+
+          <section className="chapter-section">
+            <div className="chapter-section-heading">
+              <span>۳</span>
+
+              <div>
+                <h2>یاخته و بافت در بدن انسان</h2>
+
+                <p>
+                  ساختار یاختهٔ جانوری، اندامک‌ها، غشای یاخته،
+                  انتقال مواد و بافت‌های بدن.
+                </p>
+              </div>
+            </div>
+
+            <div className="chapter-topic-list">
+              <div>یاختهٔ جانوری</div>
+              <div>هسته</div>
+              <div>سیتوپلاسم</div>
+              <div>شبکهٔ آندوپلاسمی زبر و صاف</div>
+              <div>رناتن</div>
+              <div>دستگاه گلژی</div>
+              <div>راکیزه</div>
+              <div>ریزکیسه</div>
+              <div>کافنده‌تن</div>
+              <div>واکوئول</div>
+              <div>سانتریول</div>
+              <div>غشای یاخته‌ای</div>
+              <div>پروتئین‌های غشا</div>
+              <div>انتشار ساده</div>
+              <div>انتشار تسهیل‌شده</div>
+              <div>گذرندگی</div>
+              <div>انتقال فعال</div>
+              <div>درون‌بری</div>
+              <div>برون‌رانی</div>
+              <div>بافت پوششی</div>
+              <div>بافت پیوندی</div>
+              <div>بافت ماهیچه‌ای</div>
+              <div>بافت عصبی</div>
             </div>
           </section>
 
@@ -217,14 +156,15 @@ function Biology10Chapter1() {
             <Microscope size={22} />
 
             <div>
-              <h3>نکته</h3>
+              <h3>نکات شکل‌ها</h3>
+
               <p>
-                محتوای این فصل بر اساس ساختار آموزشی زیست‌شناسی
-                دهم تنظیم شده و در ادامه، درسنامهٔ هر گفتار به‌صورت
-                کامل در همین بخش قرار می‌گیرد.
+                نکات و مطالب مربوط به شکل‌های فصل نیز در ادامهٔ همین
+                صفحه قرار می‌گیرند.
               </p>
             </div>
           </section>
+
         </div>
       </section>
     </main>
