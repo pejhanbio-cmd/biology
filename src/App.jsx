@@ -18,7 +18,7 @@ import Health12 from "./pages/Health12";
 
 import Biology10Chapter1 from "./pages/Biology10Chapter1";
 import Biology10Chapter1Lesson1 from "./pages/Biology10Chapter1Lesson1";
-
+import Biology10Chapter1Lesson3 from "./pages/Biology10Chapter1Lesson3";
 export default function App() {
   return (
     <>
@@ -53,7 +53,10 @@ export default function App() {
           path="/courses/biology-10/chapter-1/lesson-1"
           element={<Biology10Chapter1Lesson1 />}
         />
-
+<Route
+  path="/courses/biology-10/chapter-1/lesson-3"
+  element={<Biology10Chapter1Lesson3 />}
+/>
         <Route
           path="/courses/biology-11"
           element={<Biology11 />}
