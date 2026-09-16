@@ -1,11 +1,31 @@
 import {
-  CheckCircle2,
-  Dna,
-  Leaf,
+  BookOpen,
   LockKeyhole,
   ShieldCheck,
+  UserRoundCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const privacyItems = [
+  {
+    icon: LockKeyhole,
+    title: "حفاظت از اطلاعات",
+    description:
+      "حریم خصوصی کاربران برای ما اهمیت دارد و اطلاعات شخصی بدون دلیل معتبر جمع‌آوری یا منتشر نمی‌شود.",
+  },
+  {
+    icon: UserRoundCheck,
+    title: "استفاده از سایت",
+    description:
+      "مطالب آموزشی سایت برای استفادهٔ شخصی و آموزشی آماده شده‌اند و انتشار آن‌ها باید با رعایت حقوق محتوا انجام شود.",
+  },
+  {
+    icon: BookOpen,
+    title: "محتوای آموزشی",
+    description:
+      "محتوای سایت با هدف کمک به یادگیری بهتر تهیه شده است و جایگزین نظر معلم، کتاب درسی یا منابع رسمی نیست.",
+  },
+];
 
 function Privacy() {
   return (
@@ -21,95 +41,72 @@ function Privacy() {
           <div className="simple-page-header">
             <div>
               <div className="simple-page-badge">
-                <LockKeyhole size={17} />
+                <ShieldCheck size={17} />
                 حریم خصوصی BIOLOGY
               </div>
 
               <h1>حریم خصوصی</h1>
 
               <p>
-                حفظ حریم خصوصی کاربران برای BIOLOGY اهمیت دارد.
-                این صفحه توضیح می‌دهد که سایت چگونه با اطلاعات
-                کاربران و داده‌های محلی برخورد می‌کند.
+                در BIOLOGY تلاش می‌کنیم محیطی امن، ساده و قابل اعتماد برای
+                یادگیری زیست‌شناسی و سلامت فراهم کنیم.
               </p>
             </div>
 
             <div className="simple-page-icon">
-              <Leaf size={70} strokeWidth={1.2} />
+              <ShieldCheck size={70} strokeWidth={1.2} />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="privacy-section">
+      <section className="simple-page-section">
         <div className="container">
-          <div className="privacy-content">
-            <article className="privacy-card">
-              <div className="privacy-card-icon">
-                <ShieldCheck size={25} />
-              </div>
+          <div className="simple-page-heading">
+            <span>اطلاعات کاربران</span>
 
-              <h2>رویکرد ما به حریم خصوصی</h2>
-
-              <p>
-                BIOLOGY با هدف ارائه محتوای آموزشی رایگان طراحی شده
-                است و در نسخه فعلی، برای استفاده معمول از سایت
-                نیازی به ایجاد حساب کاربری یا ارائه اطلاعات شخصی
-                نیست.
-              </p>
-            </article>
-
-            <article className="privacy-card">
-              <div className="privacy-card-icon">
-                <Dna size={25} />
-              </div>
-
-              <h2>اطلاعات ذخیره‌شده در مرورگر</h2>
-
-              <p>
-                برخی امکانات محلی سایت ممکن است برای نگهداری
-                تنظیمات یا وضعیت یادگیری از حافظه مرورگر
-                (LocalStorage) استفاده کنند. این اطلاعات روی
-                دستگاه خود کاربر نگهداری می‌شوند.
-              </p>
-            </article>
-
-            <article className="privacy-card">
-              <div className="privacy-card-icon">
-                <CheckCircle2 size={25} />
-              </div>
-
-              <h2>اطلاعات شخصی</h2>
-
-              <p>
-                در نسخه فعلی BIOLOGY فرم ثبت‌نام یا پروفایل کاربری
-                ندارد و اطلاعاتی مانند نام، شماره تلفن یا رمز عبور
-                برای استفاده از محتوای آموزشی درخواست نمی‌شود.
-              </p>
-            </article>
-
-            <article className="privacy-card">
-              <div className="privacy-card-icon">
-                <LockKeyhole size={25} />
-              </div>
-
-              <h2>تغییرات این صفحه</h2>
-
-              <p>
-                با توسعه امکانات سایت، ممکن است این سیاست حریم
-                خصوصی نیز به‌روزرسانی شود. نسخه جدید در همین صفحه
-                منتشر خواهد شد.
-              </p>
-            </article>
-          </div>
-
-          <div className="privacy-note">
-            <strong>نکته</strong>
+            <h2>قوانین استفاده و حفظ حریم خصوصی</h2>
 
             <p>
-              هدف این صفحه ارائه یک توضیح شفاف و ساده درباره
-              وضعیت حریم خصوصی در نسخه فعلی BIOLOGY است.
+              این صفحه توضیح می‌دهد اطلاعات کاربران چگونه استفاده می‌شود و
+              کاربران هنگام استفاده از محتوای سایت چه نکاتی را باید رعایت کنند.
             </p>
+          </div>
+
+          <div className="simple-page-grid">
+            {privacyItems.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article className="simple-page-card" key={item.title}>
+                  <div );
+            })}
+          </div>
+
+          <div className="privacy-content">
+            <h2>نکات مهم</h2>
+
+            <p>
+              استفاده از سایت به معنای پذیرش قوانین و شرایط استفاده از آن است.
+              کاربران باید از انتشار، کپی‌برداری تجاری یا استفادهٔ نادرست از
+              مطالب آموزشی خودداری کنند.
+            </p>
+
+            <p>
+              ممکن است برای بهبود عملکرد سایت، اطلاعات فنی عمومی مانند نوع
+              مرورگر، دستگاه و صفحات بازدیدشده ثبت شود. این اطلاعات برای
+              بهبود تجربهٔ کاربری استفاده می‌شود.
+            </p>
+
+            <p>
+              اگر دربارهٔ حریم خصوصی یا نحوهٔ استفاده از مطالب سؤالی دارید،
+              می‌توانید از طریق صفحهٔ تماس با ما ارتباط برقرار کنید.
+            </p>
+
+            <Link to="/contact" className="simple-page-card-button">
+              تماس با ما
+              <span aria-hidden="true">←</span>
+            </Link>
           </div>
         </div>
       </section>
