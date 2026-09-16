@@ -1,7 +1,6 @@
 function CellLesson() {
   return (
     <div className="lesson-content">
-
       <h3>یاخته جانوری</h3>
       <p>
         یاخته واحد ساختار و عملکرد در جانداران است. یاخته جانوری از سه بخش
@@ -121,7 +120,6 @@ function CellLesson() {
           <li>سانتریول و رناتن غشا ندارند اما اندامک محسوب می‌شوند.</li>
         </ul>
       </div>
-
     </div>
   );
 }
