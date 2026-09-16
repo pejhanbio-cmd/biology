@@ -23,7 +23,6 @@ function Home() {
               description="شروع مسیر یادگیری زیست‌شناسی با مفاهیم پایه و بدن انسان."
               chapters="7"
               lessons="22"
-              progress={0}
               link="/courses/biology-10"
             />
 
@@ -32,7 +31,6 @@ function Home() {
               description="یادگیری تنظیم عصبی، حواس، ایمنی، تولیدمثل و پاسخ گیاهان."
               chapters="9"
               lessons="25"
-              progress={0}
               link="/courses/biology-11"
             />
 
@@ -41,7 +39,6 @@ function Home() {
               description="از مولکول‌های اطلاعاتی و ژنتیک تا انرژی و فناوری‌های نوین."
               chapters="8"
               lessons="24"
-              progress={0}
               link="/courses/biology-12"
             />
 
@@ -51,7 +48,6 @@ function Home() {
               description="یادگیری اصول سلامت، تغذیه، پیشگیری از بیماری‌ها و سبک زندگی سالم."
               chapters="6"
               lessons="14"
-              progress={0}
               link="/courses/health-12"
             />
           </div>
