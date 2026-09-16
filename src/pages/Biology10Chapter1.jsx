@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import { BookOpen, ChevronLeft, Dna, Microscope } from "lucide-react";
 import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1";
-import CellLesson from "../components/biology10/CellLesson";
-import MembraneLesson from "../components/biology10/MembraneLesson";
-import TransportLesson from "../components/biology10/TransportLesson";
-import TissueLesson from "../components/biology10/TissueLesson";
 
 const sections = [
   {
@@ -34,12 +30,27 @@ const sections = [
       "سطوح سازمان‌یابی حیات",
     ],
   },
+  {
+    title: "یاخته و بافت در بدن انسان",
+    text: "یاخته واحد ساختاری و عملکردی بدن است و ساختارهایی مانند هسته، رناتن، شبکهٔ آندوپلاسمی، گلژی و راکیزه دارد.",
+    items: [
+      "هسته و سیتوپلاسم",
+      "شبکهٔ آندوپلاسمی زبر و صاف",
+      "رناتن و دستگاه گلژی",
+      "راکیزه، ریزکیسه و کافنده‌تن",
+      "واکوئول و سانتریول",
+      "غشای یاخته‌ای و پروتئین‌های غشا",
+      "انتشار ساده و تسهیل‌شده",
+      "گذرندگی و انتقال فعال",
+      "درون‌بری و برون‌رانی",
+      "بافت پوششی، پیوندی، ماهیچه‌ای و عصبی",
+    ],
+  },
 ];
 
 function Biology10Chapter1() {
   return (
     <main className="chapter-page">
-
       <section className="chapter-hero">
         <div className="container">
           <div className="chapter-breadcrumb">
@@ -56,9 +67,15 @@ function Biology10Chapter1() {
             </div>
 
             <div>
-              <span className="chapter-eyebrow">زیست‌شناسی دهم</span>
+              <span className="chapter-eyebrow">
+                زیست‌شناسی دهم
+              </span>
+
               <h1>فصل اول: دنیای زنده</h1>
-              <p>درسنامه و نکات مهم فصل اول زیست‌شناسی دهم</p>
+
+              <p>
+                درسنامه و نکات مهم فصل اول زیست‌شناسی دهم
+              </p>
             </div>
           </div>
         </div>
@@ -69,16 +86,24 @@ function Biology10Chapter1() {
 
           <div className="chapter-intro">
             <BookOpen size={22} />
+
             <div>
               <h2>درسنامهٔ فصل</h2>
-              <p>مطالب فصل به‌صورت یکپارچه ارائه شده‌اند.</p>
+
+              <p>
+                مطالب فصل به‌صورت یکپارچه ارائه شده‌اند.
+              </p>
             </div>
           </div>
 
           {sections.map((section, index) => (
-            <section className="chapter-section" key={section.title}>
+            <section
+              className="chapter-section"
+              key={section.title}
+            >
               <div className="chapter-section-heading">
                 <span>{index + 1}</span>
+
                 <div>
                   <h2>{section.title}</h2>
                   <p>{section.text}</p>
@@ -95,55 +120,8 @@ function Biology10Chapter1() {
 
           <section className="chapter-section">
             <div className="chapter-section-heading">
-              <span>۳</span>
-              <div>
-                <h2>یاخته و بافت در بدن انسان</h2>
-                <p>یاختهٔ جانوری، اندامک‌ها، غشا، انتقال مواد و بافت‌ها</p>
-              </div>
-            </div>
-
-            <CellLesson />
-          </section>
-
-          <section className="chapter-section">
-            <div className="chapter-section-heading">
               <span>۴</span>
-              <div>
-                <h2>غشای یاخته‌ای و پروتئین‌های غشا</h2>
-                <p>ساختار غشا، فسفولیپیدها، کلسترول و پروتئین‌ها</p>
-              </div>
-            </div>
 
-            <MembraneLesson />
-          </section>
-
-          <section className="chapter-section">
-            <div className="chapter-section-heading">
-              <span>۵</span>
-              <div>
-                <h2>ورود و خروج مواد از یاخته</h2>
-                <p>انتشار ساده، تسهیل‌شده، اسمز، انتقال فعال، درون‌بری و برون‌رانی</p>
-              </div>
-            </div>
-
-            <TransportLesson />
-          </section>
-
-          <section className="chapter-section">
-            <div className="chapter-section-heading">
-              <span>۶</span>
-              <div>
-                <h2>بافت‌های بدن انسان</h2>
-                <p>بافت پوششی، پیوندی، عصبی و ویژگی‌های حیات</p>
-              </div>
-            </div>
-
-            <TissueLesson />
-          </section>
-
-          <section className="chapter-section">
-            <div className="chapter-section-heading">
-              <span>۷</span>
               <div>
                 <h2>نکات شکل‌ها</h2>
                 <p>شکل‌های مهم فصل اول</p>
@@ -155,11 +133,14 @@ function Biology10Chapter1() {
 
           <section className="chapter-note">
             <Microscope size={22} />
+
             <div>
               <h3>جمع‌بندی</h3>
+
               <p>
-                زیست‌شناسی، گسترهٔ حیات، یاخته، غشا، انتقال مواد
-                و بافت‌های بدن از محورهای اصلی این فصل هستند.
+                زیست‌شناسی، گسترهٔ حیات، یاخته، غشا،
+                انتقال مواد و بافت‌های بدن از محورهای
+                اصلی این فصل هستند.
               </p>
             </div>
           </section>
