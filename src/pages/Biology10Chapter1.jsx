@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BookOpen, ChevronLeft, Dna, Microscope } from "lucide-react";
-import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1";
+import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1.jsx";
 
 const sections = [
   {
@@ -40,8 +40,7 @@ const sections = [
       "راکیزه، ریزکیسه و کافنده‌تن",
       "واکوئول و سانتریول",
       "غشای یاخته‌ای و پروتئین‌های غشا",
-      "انتشار ساده و تسهیل‌شده",
-      "گذرندگی و انتقال فعال",
+      "انتشار ساده "گذرندگی و انتقال فعال",
       "درون‌بری و برون‌رانی",
       "بافت پوششی، پیوندی، ماهیچه‌ای و عصبی",
     ],
@@ -67,40 +66,19 @@ function Biology10Chapter1() {
             </div>
 
             <div>
-              <span className="chapter-eyebrow">
-                زیست‌شناسی دهم
-              </span>
+              <span className="chapter-eyebrow">زیست‌شناسی دهم</span>
 
               <h1>فصل اول: دنیای زنده</h1>
 
-              <p>
-                درسنامه و نکات مهم فصل اول زیست‌شناسی دهم
-              </p>
+              <p>درسنامه و نکات مهم فصل اول زیست‌شناسی دهم</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="chapter-content">
-        <div className="container">
-
-          <div className="chapter-intro">
-            <BookOpen size={22} />
-
-            <div>
-              <h2>درسنامهٔ فصل</h2>
-
-              <p>
-                مطالب فصل به‌صورت یکپارچه ارائه شده‌اند.
-              </p>
-            </div>
-          </div>
-
-          {sections.map((section, index) => (
-            <section
-              className="chapter-section"
-              key={section.title}
-            >
+        <div class {sections.map((section, index) => (
+            <section className="chapter-section" key={section.title}>
               <div className="chapter-section-heading">
                 <span>{index + 1}</span>
 
@@ -138,13 +116,11 @@ function Biology10Chapter1() {
               <h3>جمع‌بندی</h3>
 
               <p>
-                زیست‌شناسی، گسترهٔ حیات، یاخته، غشا،
-                انتقال مواد و بافت‌های بدن از محورهای
-                اصلی این فصل هستند.
+                زیست‌شناسی، گسترهٔخته، غشا، انتقال مواد و بافت‌های
+                بدن از محورهای اصلی این فصل هستند.
               </p>
             </div>
           </section>
-
         </div>
       </section>
     </main>
