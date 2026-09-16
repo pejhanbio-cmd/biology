@@ -12,7 +12,6 @@ function CourseCard({
   description,
   chapters,
   lessons,
-  progress = 0,
   link = "/courses",
 }) {
   const Icon = icons[type] || BookOpen;
@@ -39,20 +38,7 @@ function CourseCard({
           {chapters} فصل
         </span>
 
-        <span>
-          {lessons} گفتار
-        </span>
-      </div>
-
-      <div className="course-card-progress">
-        <div className="course-card-progress-info">
-          <span>پیشرفت یادگیری</span>
-          <strong>{progress}%</strong>
-        </div>
-
-        <div className="course-card-progress-bar">
-          <span style={{ width: `${progress}%` }}></span>
-        </div>
+        <span>{lessons} گفتار</span>
       </div>
 
       <Link to={link} className="course-card-button">
