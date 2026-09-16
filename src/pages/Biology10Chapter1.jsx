@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { BookOpen, ChevronLeft, Dna, Microscope } from "lucide-react";
+
 import FigureNotesChapter1 from "../components/biology10/FigureNotesChapter1.jsx";
+import CellLesson from "../components/biology10/CellLesson.jsx";
 
 const sections = [
   {
@@ -56,8 +58,10 @@ function Biology10Chapter1() {
           <div className="chapter-breadcrumb">
             <Link to="/">خانه</Link>
             <ChevronLeft size={15} />
+
             <Link to="/courses/biology-10">زیست دهم</Link>
             <ChevronLeft size={15} />
+
             <span>فصل اول</span>
           </div>
 
@@ -84,7 +88,11 @@ function Biology10Chapter1() {
 
             <div>
               <h2>درسنامهٔ فصل</h2>
-              <p>مطالب فصل به‌صورت یکپارچه ارائه شده‌اند.</p>
+
+              <p>
+                همهٔ مطالب فصل اول، شامل زیست‌شناسی، گسترهٔ حیات، یاخته و
+                اندامک‌های یاخته‌ای، در این صفحه ارائه شده‌اند.
+              </p>
             </div>
           </div>
 
@@ -112,6 +120,22 @@ function Biology10Chapter1() {
               <span>۴</span>
 
               <div>
+                <h2>یاخته و اندامک‌های یاخته‌ای</h2>
+
+                <p>
+                  مطالب کامل مربوط به ساختار یاختهٔ جانوری و اندامک‌های آن
+                </p>
+              </div>
+            </div>
+
+            <CellLesson />
+          </section>
+
+          <section className="chapter-section">
+            <div className="chapter-section-heading">
+              <span>۵</span>
+
+              <div>
                 <h2>نکات شکل‌ها</h2>
                 <p>شکل‌های مهم فصل اول</p>
               </div>
@@ -124,10 +148,12 @@ function Biology10Chapter1() {
             <Microscope size={22} />
 
             <div>
-              <h3>جمع‌بندی</h3>
+              <h3>جمع‌بندی فصل</h3>
 
               <p>
-                زیست‌شناسی، گست              </p>
+                زیست‌شناسی، گسترهٔ حیات، یاخته، اندامک‌های یاخته‌ای، غشا،
+                انتقال مواد و بافت‌های بدن از محورهای اصلی این فصل هستند.
+              </p>
             </div>
           </section>
         </div>
