@@ -40,7 +40,8 @@ const sections = [
       "راکیزه، ریزکیسه و کافنده‌تن",
       "واکوئول و سانتریول",
       "غشای یاخته‌ای و پروتئین‌های غشا",
-      "انتشار ساده "گذرندگی و انتقال فعال",
+      "انتشار ساده و تسهیل‌شده",
+      "گذرندگی و انتقال فعال",
       "درون‌بری و برون‌رانی",
       "بافت پوششی، پیوندی، ماهیچه‌ای و عصبی",
     ],
@@ -77,7 +78,17 @@ function Biology10Chapter1() {
       </section>
 
       <section className="chapter-content">
-        <div class {sections.map((section, index) => (
+        <div className="container">
+          <div className="chapter-intro">
+            <BookOpen size={22} />
+
+            <div>
+              <h2>درسنامهٔ فصل</h2>
+              <p>مطالب فصل به‌صورت یکپارچه ارائه شده‌اند.</p>
+            </div>
+          </div>
+
+          {sections.map((section, index) => (
             <section className="chapter-section" key={section.title}>
               <div className="chapter-section-heading">
                 <span>{index + 1}</span>
@@ -116,9 +127,7 @@ function Biology10Chapter1() {
               <h3>جمع‌بندی</h3>
 
               <p>
-                زیست‌شناسی، گسترهٔخته، غشا، انتقال مواد و بافت‌های
-                بدن از محورهای اصلی این فصل هستند.
-              </p>
+                زیست‌شناسی، گست              </p>
             </div>
           </section>
         </div>
