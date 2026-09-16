@@ -1,11 +1,32 @@
 import {
-  Dna,
-  Leaf,
+  ArrowLeft,
   Mail,
-  MessageCircle,
-  Send,
+  MapPin,
+  MessageSquareText,
+  PhoneCall,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const contactItems = [
+  {
+    icon: Mail,
+    label: "ایمیل",
+    value: "support@biologyacademy.ir",
+    href: "mailto:support@biologyacademy.ir",
+  },
+  {
+    icon: PhoneCall,
+    label: "تلفن",
+    value: "+98 21 0000 0000",
+    href: "tel:+982100000000",
+  },
+  {
+    icon: MapPin,
+    label: "موقعیت",
+    value: "ایران، تهران",
+    href: "#",
+  },
+];
 
 function Contact() {
   return (
@@ -21,21 +42,20 @@ function Contact() {
           <div className="simple-page-header">
             <div>
               <div className="simple-page-badge">
-                <Mail size={17} />
-                ارتباط با BIOLOGY
+                <MessageSquareText size={17} />
+                تماس با BIOLOGY
               </div>
 
               <h1>تماس با ما</h1>
 
               <p>
-                اگر درباره محتوای آموزشی، پیشنهادهای بهبود یا
-                مشکلات سایت نظری داری، خوشحال می‌شویم آن را با ما
-                در میان بگذاری.
+                اگر سؤال، پیشنهاد یا انتقادی درباره محتوای آموزشی یا طراحی سایت
+                دارید، خوشحال می‌شویم با ما در ارتباط باشید.
               </p>
             </div>
 
             <div className="simple-page-icon">
-              <Leaf size={70} strokeWidth={1.2} />
+              <Mail size={70} strokeWidth={1.2} />
             </div>
           </div>
         </div>
@@ -44,72 +64,40 @@ function Contact() {
       <section className="simple-page-section">
         <div className="container">
           <div className="simple-page-heading">
-            <span>ارتباط با ما</span>
-
-            <h2>نظرات و پیشنهادهای شما مهم است</h2>
-
+            <span>راه‌های ارتباطی</span>
+            <h2>در هر زمان پاسخ‌گوی شما هستیم</h2>
             <p>
-              BIOLOGY با هدف بهتر شدن تجربه یادگیری دانش‌آموزان
-              توسعه پیدا می‌کند.
+              برای دریافت اطلاعات بیشتر، همکاری یا راهنمایی در مسیر یادگیری، از
+              یکی از راه‌های زیر استفاده کنید.
             </p>
           </div>
 
-          <div className="contact-grid">
-            <article className="simple-page-card">
-              <div className="simple-page-card-icon">
-                <MessageCircle size={25} />
-              </div>
+          <div className="simple-page-grid">
+            {contactItems.map((item) => {
+              const Icon = item.icon;
 
-              <h3>پیشنهاد و بازخورد</h3>
+              return (
+                <article className="simple-page-card" key={item.label}>
+                  <div className="simple-page-card-icon">
+                    <Icon size={25} />
+                  </div>
 
-              <p>
-                اگر ایده‌ای برای بهتر شدن سایت یا محتوای آموزشی
-                داری، می‌توانی آن را با ما در میان بگذاری.
-              </p>
-            </article>
+                  <h3>{item.label}</h3>
 
-            <article className="simple-page-card">
-              <div className="simple-page-card-icon">
-                <Mail size={25} />
-              </div>
+                  <p>{item.value}</p>
 
-              <h3>ارتباط آموزشی</h3>
-
-              <p>
-                برای موضوعات مرتبط با محتوای آموزشی و ساختار
-                دوره‌ها می‌توانی با تیم BIOLOGY در ارتباط باشی.
-              </p>
-            </article>
-
-            <article className="simple-page-card">
-              <div className="simple-page-card-icon">
-                <Send size={25} />
-              </div>
-
-              <h3>گزارش مشکل</h3>
-
-              <p>
-                اگر هنگام استفاده از سایت با مشکلی مواجه شدی،
-                اطلاع دادن آن به بهبود نسخه‌های بعدی کمک می‌کند.
-              </p>
-            </article>
-          </div>
-
-          <div className="contact-message-box">
-            <div className="contact-message-icon">
-              <Dna size={28} />
-            </div>
-
-            <div>
-              <span>BIOLOGY</span>
-
-              <h2>با هم بهترش می‌کنیم 🌿</h2>
-
-              <p>
-                این سایت یک پروژه آموزشی در حال توسعه است و
-                پیشنهادهای شما می‌تواند در مسیر رشد آن مؤثر باشد.
-              </p>
-            </div>
+                  <a
+                    href={item.href}
+                    className="simple-page-card-button"
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    ارسال پیام
+                    <ArrowLeft size={17} />
+                  </a>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
